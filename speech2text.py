@@ -1,6 +1,9 @@
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 import whisper  # for Python-only audio loading
+"""
+install ffmpeg for mp4 file, otherwise windows file not found error
+"""
 
 #%%
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -49,4 +52,5 @@ result = pipe({
 })
 
 print(result["text"])
+
 # output: Ich habe wirklich keinen Käskuchen gegessen
